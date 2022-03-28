@@ -72,9 +72,7 @@ class DetailMobilePage extends StatelessWidget {
           children:  [
             Stack(
               children:  [
-                Hero(
-                  tag: neko.imageAsset,
-                    child: Image.asset(neko.imageAsset)),
+                Image.asset(neko.imageAsset),
                 SafeArea(
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
@@ -100,6 +98,24 @@ class DetailMobilePage extends StatelessWidget {
                 ),
               ],
             ),
+
+            Container(
+              margin: EdgeInsets.only(top: 16.0),
+              child: Text(
+                neko.name,
+                textAlign: TextAlign.center,
+                style: titleTextStyle,
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.all(16.0),
+              child: Text(
+                neko.description,
+                textAlign: TextAlign.center,
+                style: descTextStyle,
+              ),
+            ),
+
             Container(
               margin: EdgeInsets.symmetric(vertical: 16.0),
               child: Row(
@@ -151,22 +167,6 @@ class DetailMobilePage extends StatelessWidget {
                     ],
                   ),
                 ],
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.only(top: 16.0),
-              child: Text(
-                neko.name,
-                textAlign: TextAlign.center,
-                style: titleTextStyle,
-              ),
-            ),
-            Container(
-              padding: EdgeInsets.all(16.0),
-              child: Text(
-                neko.description,
-                textAlign: TextAlign.center,
-                style: descTextStyle,
               ),
             ),
           ],
