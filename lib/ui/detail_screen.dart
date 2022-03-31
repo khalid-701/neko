@@ -186,6 +186,7 @@ class DetailWebPage extends StatefulWidget {
 }
 
 class _DetailWebPageState extends State<DetailWebPage> {
+  bool isFavorite = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -247,7 +248,17 @@ class _DetailWebPageState extends State<DetailWebPage> {
                                       ),
                                     ],
                                   ),
-                                  FavoriteButton(),
+                                  IconButton(
+                                    icon: Icon(
+                                      isFavorite ? Icons.favorite : Icons.favorite_border,
+                                      color: Colors.red,
+                                    ),
+                                    onPressed: () {
+                                      setState(() {
+                                        isFavorite = !isFavorite;
+                                      });
+                                    },
+                                  )
                                 ],
                               ),
                               Row(
