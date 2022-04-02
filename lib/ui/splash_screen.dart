@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:neko/ui/login_screen.dart';
 import 'package:neko/ui/main_screen.dart';
 
 TextStyle titleTextStyle = GoogleFonts.poppins(
@@ -29,7 +30,7 @@ class StartState extends State<SplashScreenPage> {
 
   route() {
     Navigator.pushReplacement(
-        context, MaterialPageRoute(builder: (context) => MainScreen()));
+        context, MaterialPageRoute(builder: (context) => LoginPage()));
   }
 
   @override
