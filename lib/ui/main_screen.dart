@@ -53,41 +53,58 @@ class MainScreen extends StatelessWidget {
   }
 }
 
-class nekoFavorite extends StatelessWidget {
+class nekoFavorite extends StatefulWidget {
+  @override
+  State<nekoFavorite> createState() => _nekoFavoriteState();
+}
+
+class _nekoFavoriteState extends State<nekoFavorite> {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
       itemBuilder: (context, index) {
         final NekoData neko = nekoList[index];
-        return InkWell(
-          onTap: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) {
-              return DetailScreen(neko: neko);
-            }));
+        return Dismissible(
+          background: Container(color: Colors.red,
+              child: Icon(Icons.delete_forever, color: Colors.black,)),
+          key: Key(neko.id.toString()),
+          direction: DismissDirection.endToStart,
+          onDismissed: (direction){
+            setState(() {
+              nekoList.removeAt(index);
+            });
+
           },
-          child: Card(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children:[
-                Image.asset(neko.imageAsset),
-                SizedBox(
-                  height: 10,
-                ),
-                Text(
-                  neko.name,
-                  style: titleTextStyle,
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                Text(
-                  neko.price,
-                  style: priceTextStyle,
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-              ],
+          child: InkWell(
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return DetailScreen(neko: neko);
+              }));
+            },
+            child: Card(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children:[
+                  Image.asset(neko.imageAsset),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    neko.name,
+                    style: titleTextStyle,
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    neko.price,
+                    style: priceTextStyle,
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                ],
+              ),
             ),
           ),
         );

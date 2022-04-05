@@ -1,4 +1,5 @@
 class NekoData {
+  int id;
   String name;
   String description;
   String publishDate;
@@ -7,6 +8,7 @@ class NekoData {
   String imageAsset;
 
   NekoData({
+    required this.id,
     required this.name,
     required this.description,
     required this.publishDate,
@@ -18,6 +20,7 @@ class NekoData {
 
 var nekoList = [
   NekoData(
+    id: 1,
     name: 'Bengal',
     description:
         'Ras Bengal merupakan hasil perkawinan kucing american shorthair dan asian leopard, yang kemudian anak betinanya dikawinkan lagi dengan induknya. Kucing yang satu ini memiliki pola spotted wild cat dan masih tergolong kucing hutan. Ukuran tubuhnya sangat atletis dengan berat jantan ketika dewasa bisa mencapai 10kg. Salah satu sifat ras Bengal yakni menyukai air, dan merupakan kucing yang cerdas serta aktif.',
@@ -27,6 +30,7 @@ var nekoList = [
     imageAsset: 'images/bengal.jpg',
   ),
   NekoData(
+    id: 2,
     name: 'Russian Blue',
     description:
         'Kucing biru Rusia atau russian blue merupakan kucing yang banyak digemari karena memiliki bulu pendek berwarna abu-abu kebiruan yang terlihat mengkilap. Matanya berwarna hijau cerah dan terkadang terdapat bercak putih di atas matanya. Russian blue lebih banyak dijadikan induk untuk menciptakan jenis ras yang lain. Sifatnya sangat ramah dan pemalu, namun ia juga cerdas, sensitif, dan penuh rasa ingin tahu.',
@@ -36,6 +40,7 @@ var nekoList = [
     imageAsset: 'images/russian-blue.jpg',
   ),
   NekoData(
+    id:3,
     name: 'Bulu Pendek Britania',
     description:
         'Kucing bulu pendek Britania merupakan ras tertua yang diyakini ada hubungannya dengan bangsa Romawi yang pernah menjajah Britania. Ras ini memiliki tubuh gempal dengan bulu pendek berwarna abu-abu kebiruan, namun kemudian dikawinkan silang dengan jenis Persia agar tidak punah dan menghasilkan kucing bulu pendek dengan berbagai warna. Kucing ini juga banyak menjadi ikon film animasi atau produk makanan kucing “Whiskas”.',
@@ -45,6 +50,7 @@ var nekoList = [
     imageAsset: 'images/kucing-bulu-pendek-britania.jpg',
   ),
   NekoData(
+    id: 4,
     name: 'Munchkin',
     description:
         'Munchkin merupakan kucing asal Amerika Serikat yang berkaki pendek akibat mutasi genetik. Namun mutasi tersebut tidak membuatnya mengalami gangguan tulang dan menyebabkan cacat atau kematian. Kaki depan Munchkin lebih pendek dari kaki yang belakang sehingga akan terlihat seperti membungkuk. Munchkin menjadi ras terkecil di dunia dengan berat jantan yakni sekitar 3-4 kg. Karena keunikannya, Munchkin banyak dikawinkan dengan ras lainnya.',
@@ -54,6 +60,7 @@ var nekoList = [
     imageAsset: 'images/munchkin.jpg',
   ),
   NekoData(
+    id: 5,
     name: 'Persia',
     description:
         'Kucing berbulu panjang dengan wajah bulat datar dan moncong pendek ini berasal dari Iran (Persia). Pada umumnya kucing Persia memiliki bentuk tubuh yang besar, gemuk, serta berhidung pesek. Namun seiring bertambahnya waktu beberapa peternak mencoba melestarikannya dengan ras lain dan menghasilkan karakteristik warna baru selain perak cerah dan gelap. Selain itu ciri hidung dan bentuk tubuhnya juga banyak yang berubah.',
@@ -63,6 +70,7 @@ var nekoList = [
     imageAsset: 'images/persia.jpg',
   ),
   NekoData(
+    id: 6,
     name: 'Sphynx',
     description:
         'Sphynx merupakan kucing hasil rekayasa genetika asal Kanada dan merupakan jenis keturunan dari kucing tanpa bulu. Jika dilihat sepintas maka tubuh Sphynx akan terlihat botak, namun jika diperhatikan dengan seksama maka kucing yang diadopsi dari nama patung di Mesir ini memiliki bulu yang sangat pendek dan sangat sedikit sekali, yang terdapat pada bagian ekor, kaki, telinga, dan dekat organ kelamin.',
@@ -72,6 +80,7 @@ var nekoList = [
     imageAsset: 'images/sphynx.jpg',
   ),
   NekoData(
+    id: 7,
     name: 'Siam',
     description:
         'Kucing berjenis oriental pertama ini banyak ditemukan di negara Siam (Thailand). Ras murni yang memiliki bulu pendek dengan tanda pada kaki, ekor dan wajahnya ini merupakan kucing terpopuler di dunia. Ia memiliki mata berwarna biru dengan tubuh ramping dan kaki serta ekor yang panjang. Siam juga memiliki bentuk wajah yang menyerupai apel, segitiga, dan baji sehingga unik dan mudah dikenali.',
@@ -81,6 +90,7 @@ var nekoList = [
     imageAsset: 'images/siam.jpg',
   ),
   NekoData(
+    id: 8,
     name: 'Telinga Lipat',
     description:
         'Kucing telinga lipat Skotlandia sering disebut dengan kucing coupari atau kucing berwajah burung hantu karena memiliki bentuk telinga yang melipat. Meskipun begitu, kucing asal Skotlandia ini belum diakui karena faktor gen yang belum stabil. Kucing telinga lipat Skotlandia merupakan kucing yang bersahabat, ramah, dan tenang. Ia memiliki kepala dan mata yang bulat, hidungnya pesek, dengan kaki serta leher yang pendek.',
@@ -90,6 +100,7 @@ var nekoList = [
     imageAsset: 'images/telinga-lipat-skotlandia.jpg',
   ),
   NekoData(
+    id: 9,
     name: 'Maine Coon',
     description:
         'Kucing tertua asal Maine, Amerika Serikat, ini merupakan jenis kucing domestik terbesar dengan tinggi yang bisa mencapai satu meter. Beberapa masyarakat percaya bahwa Maine Coon berasal dari keturunan rakun dengan kucing setengah liar. Maine Coon memiliki ekor dengan bulu yang mengembang dengan bentuk yang hampir menyerupai rakun. Ia juga memiliki bulu lebat dan halus di sekitar leher sehingga menyerupai singa.',
@@ -99,6 +110,7 @@ var nekoList = [
     imageAsset: 'images/maine-coon.jpg',
   ),
   NekoData(
+    id: 10,
     name: 'Ragdoll',
     description:
         'Ragdoll merupakan jenis kucing terbesar yang dikembangbiakkan oleh seorang warga Amerika Serikat, Ann Baker. Kucing ini memiliki bentuk tubuh yang besar dengan dada dan panggul yang lebar. Ragdoll masih memiliki keturunan gen dari ras Persia, Birman, dan juga Burmese. Yang mana bulu-bulunya sangat lembut seperti bulu kelinci. Untuk warna bulunya memiliki pola bicolor, vandan point (tortie, solid, lynx), dan mitted.',

@@ -176,17 +176,10 @@ class DetailMobilePage extends StatelessWidget {
   }
 }
 
-class DetailWebPage extends StatefulWidget {
+class DetailWebPage extends StatelessWidget {
   final NekoData neko;
+  const DetailWebPage({Key? key, required this.neko}) : super(key: key);
 
-  DetailWebPage({required this.neko});
-
-  @override
-  _DetailWebPageState createState() => _DetailWebPageState();
-}
-
-class _DetailWebPageState extends State<DetailWebPage> {
-  bool isFavorite = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -213,7 +206,7 @@ class _DetailWebPageState extends State<DetailWebPage> {
                       child: Column(
                         children: [
                           ClipRRect(
-                            child: Image.asset(widget.neko.imageAsset),
+                            child: Image.asset(neko.imageAsset),
                             borderRadius: BorderRadius.circular(10),
                           ),
                         ],
@@ -229,36 +222,26 @@ class _DetailWebPageState extends State<DetailWebPage> {
                             children:  [
                               Container(
                                 child: Text(
-                                  widget.neko.name,
+                                  neko.name,
                                   textAlign: TextAlign.center,
                                   style: titleTextStyle,
                                 ),
                               ),
                               Row(
                                 mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
+                                MainAxisAlignment.spaceBetween,
                                 children: [
                                   Row(
                                     children:  [
                                       Icon(Icons.calendar_today),
                                       SizedBox(width: 8.0),
                                       Text(
-                                        widget.neko.publishDate,
+                                        neko.publishDate,
                                         style: subTitleTextStyle,
                                       ),
                                     ],
                                   ),
-                                  IconButton(
-                                    icon: Icon(
-                                      isFavorite ? Icons.favorite : Icons.favorite_border,
-                                      color: Colors.red,
-                                    ),
-                                    onPressed: () {
-                                      setState(() {
-                                        isFavorite = !isFavorite;
-                                      });
-                                    },
-                                  )
+                            FavoriteButton(),
                                 ],
                               ),
                               Row(
@@ -266,7 +249,7 @@ class _DetailWebPageState extends State<DetailWebPage> {
                                   Icon(Icons.access_time),
                                   SizedBox(width: 8.0),
                                   Text(
-                                    widget.neko.publishTime,
+                                    neko.publishTime,
                                     style: subTitleTextStyle,
                                   ),
                                 ],
@@ -277,7 +260,7 @@ class _DetailWebPageState extends State<DetailWebPage> {
                                   Icon(Icons.monetization_on),
                                   SizedBox(width: 8.0),
                                   Text(
-                                    widget.neko.price,
+                                    neko.price,
                                     style: subTitleTextStyle,
                                   ),
                                 ],
@@ -285,7 +268,7 @@ class _DetailWebPageState extends State<DetailWebPage> {
                               Container(
                                 padding: EdgeInsets.symmetric(vertical: 16.0),
                                 child: Text(
-                                  widget.neko.description,
+                                  neko.description,
                                   textAlign: TextAlign.justify,
                                   style: descTextStyle,
                                 ),
@@ -305,6 +288,8 @@ class _DetailWebPageState extends State<DetailWebPage> {
     );
   }
 }
+
+
 
 class FavoriteButton extends StatefulWidget {
   @override
